@@ -3,8 +3,9 @@
 # Anschliessend werden die älteren Dateien geloescht 
 # Es wird so lange die aelteste Datei geloescht, bis nur noch die
 # gewünschte Anzahl an Dateien (MaxAnzDat) uebrig ist 
-# ALT: Es werden nur Dateien behandelt mit Namen  "beliebigerStringXX-MM-DD-hh-mm-ss.mp4
+# ALT: Es werden nur Dateien behandelt mit Namen  "beliebigerStringYY-MM-DD-hh-mm-ss.mp4
 # NEU: Es werden nur Dateien behandelt mit Namen  "test-1500004980-Saturday-04-11-17-16-17.flv"
+#           also  „beliebigerStringDD-MM-YY-hh-mm.flv“
 # Es muessen 2 Vorgaben eingestellt werden
 #  MaxAnzDat........ Anzahl Dateien, die uebrig bleiben sollen
 #  pfad............  Verzeichnis, das durchsucht und in dem geloescht
