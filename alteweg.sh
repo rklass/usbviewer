@@ -1,9 +1,10 @@
 #!/bin/bash
-# Das Programm geht durch alle mp4 Dateien in Verzeichnis  
+# Das Programm geht durch alle flvDateien in Verzeichnis  
 # Anschliessend werden die älteren Dateien geloescht 
 # Es wird so lange die aelteste Datei geloescht, bis nur noch die
 # gewünschte Anzahl an Dateien (MaxAnzDat) uebrig ist 
-# Es werden nur Dateien behandelt mit Namen  "beliebigerStringXX-MM-DD-hh-mm-ss.mp4
+# ALT: Es werden nur Dateien behandelt mit Namen  "beliebigerStringXX-MM-DD-hh-mm-ss.mp4
+# NEU: Es werden nur Dateien behandelt mit Namen  "test-1500004980-Saturday-04-11-17-16-17.flv"
 # Es muessen 2 Vorgaben eingestellt werden
 #  MaxAnzDat........ Anzahl Dateien, die uebrig bleiben sollen
 #  pfad............  Verzeichnis, das durchsucht und in dem geloescht
@@ -14,7 +15,7 @@ typeset -i Anzahl=0
 typeset -i MaxAnzDat=10   # VORGABE: Maximale Anzahl Dateien, die uebrig bleiben sollen
 # 1.) Einstellungen
 echo " 1.) Vorgaben "
-pfad="/media/usb0/*"   # VORGABE:    Verzeichnis in dem stehen die .mp4s (mit /* hinten)
+pfad="/media/usb0/*"   # VORGABE:    Verzeichnis in dem stehen die .flv (mit /* hinten)
 echo "pfad=  " $pfad
 echo "MaxAnzDat=  " $MaxAnzDat
 echo " "
@@ -24,7 +25,8 @@ for File in $pfad
    do
     alle=alle+1 #alle ergibt die Zahl aller Dateien in pfad
     #Zahl aus Datum generieren
-    datzahl="${File: -21 : -19}${File: -18 : -16}${File: -15 : -13}${File: -12 : -10}${File: -9 : -7}${File: -6 : -4}"
+    #datzahl="${File: -21 : -19}${File: -18 : -16}${File: -15 : -13}${File: -12 : -10}${File: -9 : -7}${File: -6 : -4}"
+    datzahl="${File: -12 : -10}${File: -15 : -13}${File: -18 : -16}${File: -9 : -7}${File: -6 : -4}"
     # Testen, ob es eine Zahl ist
     if [[ `echo "$datzahl" | grep -E ^[[:digit:]]+$` ]]
       then
@@ -46,8 +48,9 @@ do
 #aelteste Datei finden
   for File in $pfad
    do
-      datzahl="${File: -21 : -19}${File: -18 : -16}${File: -15 : -13}${File: -12 : -10}${File: -9 : -7}${File: -6 : -4}"
-    # Testen, ob es eine Zahl ist
+      #datzahl="${File: -21 : -19}${File: -18 : -16}${File: -15 : -13}${File: -12 : -10}${File: -9 : -7}${File: -6 : -4}"
+      datzahl="${File: -12 : -10}${File: -15 : -13}${File: -18 : -16}${File: -9 : -7}${File: -6 : -4}"
+      # Testen, ob es eine Zahl ist
       if [[ `echo "$datzahl" | grep -E ^[[:digit:]]+$` ]]
       then
         echo $File " hat die datzahl= "  $datzahl "datmin = " $datmin
