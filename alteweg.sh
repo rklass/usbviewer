@@ -44,7 +44,7 @@ fi
 # 3) In While Schleife immer die aelteste Datei löschen solange bis nur noch MaxAnzDat da sind
 while [ $Anzahl -gt $MaxAnzDat ]
 do
-  datmin=555555555555  # ist eine Zahl YYMMDDhhmmss
+  datmin=555555555555  # ist eine Zahl YYMMDDhhmm
 #aelteste Datei finden
   for File in $pfad
    do
