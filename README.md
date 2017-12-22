@@ -13,6 +13,7 @@ Inhalten des USB Sticks überschrieben.
 - sudo apt-get install unoconv (Konvertierprogramme)
 - sudo apt-get install fbi (Image-Viewer) 
 - sudo apt-get install omxplayer (Video-Player)
+- sudo apt-get install unclutter (Programm um Mauszeiger verschwinden zu lassen)
 
 **Anschliessend muss noch die automatische Erkennung des USBS-Sticks konfiguriert werden:**
 ```
