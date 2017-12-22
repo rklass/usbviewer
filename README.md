@@ -9,12 +9,12 @@ Wenn der Raspberry Pi ohne USB Stick gestartet wird, werden die Medien, welche i
 auf den Raspberry Pi kopiert wurden, wiedergegeben. Beim Start mit USB Stick werden die alten Medien mit den 
 Inhalten des USB Sticks überschrieben.
 
-Auf dem Raspberry Pi muss vorab folgendes installiert werden:
+**Auf dem Raspberry Pi muss vorab folgendes installiert werden:**
 - sudo apt-get install unoconv (Konvertierprogramme)
 - sudo apt-get install fbi (Image-Viewer) 
 - sudo apt-get install omxplayer (Video-Player)
 
-Anschliessend muss noch die automatische Erkennung des USBS-Sticks konfiguriert werden:
+**Anschliessend muss noch die automatische Erkennung des USBS-Sticks konfiguriert werden:**
 ```
 sudo blkid
 ```
@@ -30,7 +30,7 @@ Folgenden Eintrag vornehmen, speichern und den Raspberry Pi neu starten:
 ```
 UUID=3A6D-A71F /media/usb0/ vfat utf8,uid=pi,gid=pi,noatime 0 0
 ```
-Um die usbviewer Skripte beim Hochfahren des Raspberry Pi auszuführen, folgenden Eintrag in der /etc/rc.local vornehmen:
+**Um die usbviewer Skripte beim Hochfahren des Raspberry Pi automatisiert auszuführen, folgenden Eintrag in der /etc/rc.local vornehmen:**
 ```
 sudo nano /etc/rc.local
 /home/pi/rkups/startanzeigen.sh  >/dev/null 2>&1
@@ -49,7 +49,7 @@ Exec=/home/pi/rkups/startanzeigen.sh
 Terminal=false
 ```
 
-Folgende Verzeichnise werden gebraucht (alle in rkups, da sind auch die scripts drin)
+**Folgende Verzeichnise werden für den usbviewer gebraucht (alle in rkups, da sind auch die scripts drin)**
 
 - Anzeigen -> da liegen die jpgs und adere Bildformate drin
 - Anzeigenmp4 -> da liegen die mp4s drin
