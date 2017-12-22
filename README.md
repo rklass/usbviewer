@@ -9,7 +9,7 @@ Wenn der Raspberry Pi ohne USB Stick gestartet wird, werden die Medien, welche i
 auf den Raspberry Pi kopiert wurden, wiedergegeben. Beim Start mit USB Stick werden die alten Medien mit den 
 Inhalten des USB Sticks überschrieben.
 
-Auf dem Raspberry Pi muss noch folgendes installiert werden:
+Auf dem Raspberry Pi muss vorab folgendes installiert werden:
 - sudo apt-get install unoconv (Konvertierprogramme)
 - sudo apt-get install fbi (Image-Viewer) 
 - sudo apt-get install omxplayer (Video-Player)
