@@ -19,7 +19,9 @@ Anschliessend muss noch die automatische Erkennung des USBS-Sticks konfiguriert 
 sudo blkid
 ```
 Es erscheint ein Eintrag für den eingesteckten USB-Stick, ähnlich dem untigen:
+
 /dev/sda1: UUID="3A6D-A71F" TYPE="vfat"
+
 Jetzt die Konfigurationsdatei /etc/fstab editieren:
 ```
 sudo nano /etc/fstab
