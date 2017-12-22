@@ -14,12 +14,14 @@ Hilfsmittel
 
 Folgende Verzeichnise werden gebraucht (alle in rkups, da sind auch die scripts drin)
 
-Anzeigen
+Anzeigen -> da liegen die jpgs und adere Bildformate drin
 
-Anzeigenmp4
+Anzeigenmp4 -> da liegen die mp4s drin
 
-Anzeigenurl
+Anzeigenurl  -> da ist eine url drin, die angezeigt wird
 
-Stick
+Stick  -> das ist der Clone des Sticks (mit umgebauten Namen " "  -> "_"
+
+
 
 
