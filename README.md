@@ -10,10 +10,10 @@ auf den Raspberry Pi kopiert wurden, wiedergegeben. Beim Start mit USB Stick wer
 Inhalten des USB Sticks überschrieben.
 
 Hilfsmittel
-	• PDF in einzelne Bilddateien (ppm Format wandeln): https://wiki.ubuntuusers.de/poppler-utils/
-	• Slidesho https://www.raspberrypi-spy.co.uk/2017/02/how-to-display-images-on-raspbian-command-line-with-fbi/
-	• Autostart einbauen:
-		○ Datei innerhalb /home/pi/.config/autostart/viewerstart.desktop anlegen, die so aussieht
+- PDF in einzelne Bilddateien (ppm Format wandeln): https://wiki.ubuntuusers.de/poppler-utils/
+- Slideshow erzeugen: https://www.raspberrypi-spy.co.uk/2017/02/how-to-display-images-on-raspbian-command-line-with-fbi/
+- Autostart einbauen:
+Datei innerhalb /home/pi/.config/autostart/viewerstart.desktop anlegen, die so aussieht
 		[Desktop Entry]
 		Name=Autostart-Script
 		Comment=Kommentar
