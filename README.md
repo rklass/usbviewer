@@ -1,4 +1,14 @@
 # usbviewer
+Das Programm liest PDFs, Bilder und Filme (mp4-Format) von einem USB Stick, 
+konvertiert die PDFs in einzelne Bilder (jpeg Format) und kopiert alle Medien vom USB Stick auf die 
+Speicherkarte des Raspberry Pi.
+
+Anschliessend werden Bilder und Filme nach dem Start des Raspberry Pi über HDMI wiedergegeben. 
+
+Wenn der Raspberry Pi ohne USB Stick gestartet wird, werden die Medien, welche im vorherigen Importvorgang 
+auf den Raspberry Pi kopiert wurden, wiedergegeben. Beim Start mit USB Stick werden die alten Medien mit den 
+Inhalten des USB Sticks überschrieben.
+
 Hilfsmittel
 	• PDF in einzelne Bilddateien (ppm Format wandeln): https://wiki.ubuntuusers.de/poppler-utils/
 	• Slidesho https://www.raspberrypi-spy.co.uk/2017/02/how-to-display-images-on-raspbian-command-line-with-fbi/
