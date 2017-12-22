@@ -1,7 +1,7 @@
 #!/bin/bash
-sudo blkid > ~/rkups/ausgabe.txt   #schreibt den namen der eingesteckten Medien auf ausgabe.txt
-anzahl=$(egrep -rc -e "dev/sd" ~/rkups/ausgabe.txt)
-#anzahl2=$(egrep -rc -e "sdb" ~/rkups/ausgabe.txt)
-#anzahl=$(($anzahl1 + $anzahl2))
+# Pfad in welchem sich alle Skripte und Unterverzeichnisse des usbviewers befinden (evtl. anzupassen)
+pfad="/home/pi/rkups/"
+sudo blkid > $pfad"ausgabe.txt"   #schreibt den namen der eingesteckten Medien auf ausgabe.txt
+anzahl=$(egrep -rc -e "dev/sd" $pfad"ausgabe.txt")
 echo $anzahl
 # mit x=$(bash /home/pi/rkups/anzahlsticks.sh ) bekommt x den Wert der Anzahl Sticks
