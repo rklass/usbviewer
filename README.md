@@ -28,12 +28,12 @@ sudo nano /etc/fstab
 ```
 Folgenden Eintrag vornehmen, speichern und den Raspberry Pi neu starten:
 ```
-UUID=3A6D-A71F /media/usb0/ vfat utf8,uid=pi,gid=pi,noatime 0 0
+/dev/sda1 /media/usb0 vfat  auto,nofail,noatime,users,rw,uid=pi,gid=pi  0 0
 ```
-**Um die usbviewer Skripte beim Hochfahren des Raspberry Pi automatisiert auszuführen, folgenden Eintrag in der /etc/rc.local vornehmen:**
+**Um den usbviewer beim Start des Raspberry Pi automatisch auszuführen, folgenden Eintrag in der crontab vornehmen:**
 ```
-sudo nano /etc/rc.local
-/home/pi/rkups/startanzeigen.sh  >/dev/null 2>&1
+sudo nano crontab -e
+@reboot /bin/bash /home/pi/rkups/startanzeigen.sh >/dev/null 2>&1
 ```
 Falls der Raspberry Pi im X-Windows Desktop-Modus gestartet wird, kann alternativ auch folgender Autostart-Eintrag vorgenommen werden:
 ```
