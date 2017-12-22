@@ -30,10 +30,15 @@ Folgenden Eintrag vornehmen, speichern und den Raspberry Pi neu starten:
 ```
 /dev/sda1 /media/usb0 vfat  auto,nofail,noatime,users,rw,uid=pi,gid=pi  0 0
 ```
-**Um den usbviewer beim Start des Raspberry Pi automatisch auszuführen, folgenden Eintrag in der crontab vornehmen:**
+**Folgende Eintraege in der crontab vornehmen:**
 ```
 sudo nano crontab -e
+# Beim Start des Raspberry Pi das usbviewer Script ausfuehren
 @reboot /bin/bash /home/pi/rkups/startanzeigen.sh >/dev/null 2>&1
+# Bildschirm Mo-Fr um 21:30 Uhr einschalten
+30 21 * * 1-5 /usr/bin/vcgencmd display_power 1
+# Bildschirm Mo-Fr um 21:25 ausschalten
+25 21 * * 1-5 /usr/bin/vcgencmd display_power 0
 ```
 Falls der Raspberry Pi im X-Windows Desktop-Modus gestartet wird, kann alternativ auch folgender Autostart-Eintrag vorgenommen werden:
 ```
