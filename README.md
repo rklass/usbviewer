@@ -13,10 +13,13 @@ Hilfsmittel
 
 
 Folgende Verzeichnise werden gebraucht (alle in rkups, da sind auch die scripts drin)
+
 Anzeigen
+
 Anzeigenmp4
+
 Anzeigenurl
+
 Stick
 
-Sowie die Datei
-ausgabe.txt
+
