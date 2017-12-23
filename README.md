@@ -14,6 +14,7 @@ Inhalten des USB Sticks überschrieben.
 - sudo apt-get install fbi (Image-Viewer) 
 - sudo apt-get install omxplayer (Video-Player)
 - sudo apt-get install unclutter (Programm um Mauszeiger verschwinden zu lassen)
+- sudo apt-get install cowsay
 
 **Anschliessend muss noch die automatische Erkennung des USBS-Sticks konfiguriert werden:**
 ```
@@ -31,21 +32,28 @@ Folgenden Eintrag vornehmen, speichern und den Raspberry Pi neu starten:
 ```
 /dev/sda1 /media/usb0 vfat  auto,nofail,noatime,users,rw,uid=pi,gid=pi  0 0
 ```
+**Um das Skript beim Start des Raspberry auszuführen, folgende Einträge in der /etc/rc.local vornehmen:**
+```
+sudo nano /etc/rc.local
+```
+Vor **exit 0** in der vorletzten Zeile den folgenden Eintrag vornehmen:
+```
+sudo /bin/bash /home/pi/rkups/startanzeigen.sh > /dev/tty1 2>&1
+```
 **Folgende Eintraege in der crontab vornehmen:**
 ```
 sudo nano crontab -e
-# Beim Start des Raspberry Pi das usbviewer Script ausfuehren
-@reboot /bin/bash /home/pi/rkups/startanzeigen.sh >/dev/null 2>&1
-# Bildschirm Mo-Fr um 21:30 Uhr einschalten
-30 21 * * 1-5 /usr/bin/vcgencmd display_power 1
-# Bildschirm Mo-Fr um 21:25 ausschalten
-25 21 * * 1-5 /usr/bin/vcgencmd display_power 0
+
+# Bildschirm Mo-Fr um 18:30 ausschalten und alle usbviewer Prozesse killen
+# 30 18 * * 1-5 /bin/bash /home/pi/rkups/monitoroff.sh > /dev/tty1 2>&1
+# Bildschirm Mo-Fr um 6:20 Uhr einschalten und usbviewer Prozesse starten
+# 20 6 * * 1-5 /bin/bash /home/pi/rkups/monitoron.sh >/dev/null 2>&1
 ```
 Falls der Raspberry Pi im X-Windows Desktop-Modus gestartet wird, kann alternativ auch folgender Autostart-Eintrag vorgenommen werden:
 ```
 /home/pi/.config/autostart/viewerstart.desktop
 ```
-Folgende Einträge in der Datei vornehmen und abspeichern:
+Folgende Einträge in der Datei viewerstart.desktop vornehmen und abspeichern:
 ```
 [Desktop Entry]
 Name=Autostart-Script
