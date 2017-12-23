@@ -9,6 +9,12 @@ Wenn der Raspberry Pi ohne USB Stick gestartet wird, werden die Medien, welche i
 auf den Raspberry Pi kopiert wurden, wiedergegeben. Beim Start mit USB Stick werden die alten Medien mit den 
 Inhalten des USB Sticks überschrieben.
 
+**Konfiguration des Raspberrys:**
+- Download und Installation eines Raspbian Stretch Lite Images: https://downloads.raspberrypi.org/raspbian_lite_latest
+- oder Download und Installation eines Raspbian Stretch Desktop Images: https://downloads.raspberrypi.org/raspbian_latest
+- Image auf eine Speicherkarte ziehen
+- Login so einstellen, dass in die Console gebootet wird (über raspi-config)
+
 **Auf dem Raspberry Pi muss vorab folgendes installiert werden:**
 - sudo apt-get install unoconv (Konvertierprogramme)
 - sudo apt-get install fbi (Image-Viewer) 
