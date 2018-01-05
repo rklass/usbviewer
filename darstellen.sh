@@ -1,22 +1,27 @@
 #!/bin/bash
 # Das Programm stellt Files aus den Ordnern  "Anzeigen" und "Anzeigenmp4" dar
 # Aufruf mit dem Parameter "endlos" stellt in eine Endlosschleife alles dar
-
 # Pfad in welchem sich alle Skripte und Unterverzeichnisse des usbviewers befinden (evtl. anzupassen)
 pfad="/home/pi/rkups/"
-
+# Parameter fürs Datstellen (zeit in sec für eine Bild) auslesen
+zeile=$(grep "KonfigParameter" /home/pi/rkups/usbviewconfig.txt)
+echo $zeile
+zeit=${zeile:0:3}
+zeit=$((zeit)) # damit wird aus dem String ein integer
+echo Darstellzeit= $zeit
+#
 eingabe=$1
 repeat=1
-
 #echo Eingabparameter in darstellen.sh war $eingabe
 while [ $repeat -eq 1 ]
 do
 # 1. Bilddateien
+  echo 1 > /home/pi/rkups/viewerlaeuft.txt # viewerlaeuft.txt wird auf true gestellt
   anzfjpg=$(find $pfad"Anzeigen" -type f | wc -l)  # das ist die Anzahl der Bilddateien
   #echo anzfjpg= $anzfjpg
 
   if [ $anzfjpg -gt 0 ];then
-    sudo fbi -a -T 1 -t 1 -1 --once -v --noverbose $pfad"Anzeigen/"* >/dev/null 2>&1
+    sudo fbi -a -T 1 -t $zeit -1 --once -v --noverbose $pfad"Anzeigen/"* >/dev/null 2>&1
     # nun wird gewartet, bis alles angezeigt ist
     x=1111
     y=$(pidof fbi)
@@ -59,3 +64,5 @@ do
   fi
 #echo In der Schleife repeat= $repeat
 done
+echo 0 > /home/pi/rkups/viewerlaeuft.txt # viewerlaeuft.txt wird auf false gestellt
+

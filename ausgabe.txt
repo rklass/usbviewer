@@ -1,3 +1,4 @@
 /dev/mmcblk0p1: LABEL="boot" UUID="95E0-9AC4" TYPE="vfat" PARTUUID="8ac9784e-01"
 /dev/mmcblk0p2: UUID="b105f9a8-f450-4976-8ac8-69053f57bab4" TYPE="ext4" PARTUUID="8ac9784e-02"
+/dev/sda1: SEC_TYPE="msdos" LABEL="KIRCHE-11" UUID="C606-FBDD" TYPE="vfat" PARTUUID="ab5ddfbe-01"
 /dev/mmcblk0: PTUUID="8ac9784e" PTTYPE="dos"

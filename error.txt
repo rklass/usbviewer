@@ -1,0 +1,12 @@
+Neuer Durchlauf --------------------------------- Fri 5 Jan 12:20:27 CET 2018
+Internet laeuft jetzt -------------------------- Fri 5 Jan 12:20:27 CET 2018
+abschalten= 1300
+abschalten= 1300
+einschalten= 1320
+einschalten= 1320
+Das Programm einundaus.sh ist gestartet. view= 1 aktuelle Zeit= 1220 abschalten= 1300 einschalten= 1320
+einschalten ist korrekt belegt
+abschalten ist korrekt belegt
+Aktuelle Zeit ist nun -------------------------- Fri 5 Jan 12:22:27 CET 2018
+view= 1 aktuelle Zeit= 1300 abschalten= 1300 einschalten= 1320
+Monitor wird abgeschaltet

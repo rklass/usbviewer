@@ -7,5 +7,6 @@
 
 /usr/bin/vcgencmd display_power 1
 clear
-/home/pi/rkups/startanzeigen.sh
+/home/pi/rkups/startanzeigen.sh &
+echo 1 > /home/pi/rkups/viewerlaeuft.txt
 exit 0

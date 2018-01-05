@@ -10,6 +10,7 @@ pfad="/home/pi/rkups/"
 
 clear
 unoconv --listener &   # Office wird im Hintergrund fuer die Konvertierung gestartet
+#echo false > /home/pi/rkups/viewerlaeuft.txt # viewerlaeuft.txt wird auf true gestellt
 echo "---------------------------------------------------------------------------------------------"
 echo "Hintergrund-Programm fuer die Konvertierung von Office- und PDF-Dokumenten wurde gestartet "
 echo "---------------------------------------------------------------------------------------------"
@@ -39,6 +40,20 @@ rename 's/\s/_/g' $files  #alle Leerzeichen der Dateinamen auf auf dem Stick wer
 # Nun werden die Office Files in pdf gewandelt
 echo "---------------------------------------------------------------------------------------------"
 echo -e "Die Leerzeichen in den folgenden Dateinamen wurden entfernt und durch _ ersetzt. \n ", $files # das sind files mit " " -> "_" ersetzt
+echo "---------------------------------------------------------------------------------------------"
+
+# Der File usbviewconfig.txt von stick wird kopiert
+if [ -a /home/pi/rkups/Stick/usbviewconfig.txt ]
+then
+  echo "Es gab den file usbviewconfig.txt, er wird kopiert"
+  cp /home/pi/rkups/Stick/usbviewconfig.txt /home/pi/rkups/usbviewconfig.txt
+else
+  echo "Es gab keinen  file usbviewconfig.txt, alter konfigfile bleibt"
+fi
+# nun wird die Abschaltung gestartet (im Hintergrund)
+sudo bash /home/pi/rkups/einundaus.sh &
+echo "---------------------------------------------------------------------------------------------"
+echo -e "Konfigfile Prueffung ist abgeschlossen"
 echo "---------------------------------------------------------------------------------------------"
 for filename in $files  #alle Officefiles in pdf wandeln
 do

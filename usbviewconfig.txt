@@ -1,0 +1,22 @@
+001....1300....1320....KonfigParameter   
+
+sec    hhmm    hhmm
+
+Show   Aus     Ein
+
+
+
+
+
+Erklaerung:
+
+- der erste Zifferblock (3 Ziffern bei sec) geben die Zeit zur Darstellung der einzelnen Bilder/ Seiten (in sekunden) fuer die Slideshow an
+
+- der zweite Zifferblock (4 Ziffern bei hhmm) geben den Zeitpunkt an, an dem der Bildschirm taeglich abgeschaltet wird
+
+- der dritte Zifferblock (4 Ziffern bei hhmm) geben den Zeitpunkt an, an dem der Bildschirm taeglich einschaltet
+
+
+
+Achtung:
+Das Format der ersten Zeile muss (incl. den Text KonfigParameter und den Punkten) so bleiben

@@ -10,9 +10,9 @@ pid=$(ps -aux | grep '/bin/bash /home/pi/rkups/startanzeigen.sh' | awk '{print $
 kill -9 $pid
 pids=$(ps -aux | grep 'bash /home/pi/rkups/darstellen.sh' | awk '{print $2}')
 kill -9 $pids
-clear
 sleep 2
-/usr/games/cowsay -f tux Bildschirm wird in 1 Minute ausgeschaltet...! 
-sleep 60
+#/usr/games/cowsay -f tux Bildschirm wird in 1 Minute ausgeschaltet...! 
+#sleep 60
 vcgencmd display_power 0
+echo 0 > /home/pi/rkups/viewerlaeuft.txt
 exit 0
