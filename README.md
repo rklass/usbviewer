@@ -66,6 +66,7 @@ Terminal=false
 
 **Eingabeparameter**
 die Datei usbviewconfig.txt kann auf dem Stick sein. Es ist eine Textdatei mit folgendem Format
+```
 001....1300....1320....KonfigParameter
 sec    hhmm    hhmm
 Show   Aus     Ein
@@ -76,6 +77,6 @@ Erklaerung:
 - der dritte Zifferblock (4 Ziffern bei hhmm) geben den Zeitpunkt an, an dem der Bildschirm taeglich einschaltet
 Achtung:
 Das Format der ersten Zeile muss (incl. den Text KonfigParameter und den Punkten) so bleiben
-
+```
 
 
