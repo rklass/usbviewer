@@ -18,6 +18,7 @@ Außerdem werden beim Start Parameter von einer Datei  usbviewconfig.txt überno
 
 **Auf dem Raspberry Pi muss vorab folgendes installiert werden:**
 - sudo apt-get install unoconv (Konvertierprogramme)
+- sudo apt-get install poppler-utils (Office Konvertierungen)
 - sudo apt-get install fbi (Image-Viewer) 
 - sudo apt-get install omxplayer (Video-Player)
 - sudo apt-get install unclutter (Programm um Mauszeiger verschwinden zu lassen)
