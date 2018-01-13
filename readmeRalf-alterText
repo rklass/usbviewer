@@ -47,7 +47,7 @@ sudo /bin/bash /home/pi/rkups/startanzeigen.sh > /dev/tty1 2>&1
 
 Folgende Eintraege in der crontab vornehmen:
 
-sudo nano crontab -e
+sudo crontab -e
 
 # Bildschirm Mo-Fr um 18:30 ausschalten und alle usbviewer Prozesse killen
 # 30 18 * * 1-5 /bin/bash /home/pi/rkups/monitoroff.sh > /dev/tty1 2>&1
